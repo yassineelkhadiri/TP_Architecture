@@ -1,3 +1,12 @@
 @startuml
-
+interface IDuck{
+    void Quack()
+    void Swim()
+}
+class Duck
+class ElectornicDuck{
+    Boolean _on
+}
+class Duck implements IDuck
+class ElectornicDuck implements IDuck
 @enduml
