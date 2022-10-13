@@ -1,0 +1,16 @@
+@startuml
+class EncodingModule{
+    void encodeWithFiles()
+    void encodeBasedOnNetworkAndDatabase()
+}
+class EncodingModuleClient{
+    
+}
+class MyDatabase{
+    Map<int, str> _data
+    int _count
+    int write()
+}
+EncodingModuleClient -- EncodingModule
+EncodingModule -- MyDatabase
+@enduml
