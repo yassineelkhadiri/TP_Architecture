@@ -1,6 +1,7 @@
 package com.directi.training.isp.exercise;
 
-public interface TimerClient
-{
+public interface ITime {
+
     void timeOutCallback();
+
 }

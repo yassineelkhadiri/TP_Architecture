@@ -1,0 +1,20 @@
+@startuml
+class Duck{
+    void Quack()
+    void Swim()
+}
+class ElectronicDuck{
+    boolean _on
+    void turn_on()
+    void turn_off()
+}
+class Pool{
+    void run()
+    void Quack()
+    void Swim()
+}
+
+Class ElectronicDuck extends Duck
+Pool -- Duck
+Pool -- ElectronicDuck
+@enduml
