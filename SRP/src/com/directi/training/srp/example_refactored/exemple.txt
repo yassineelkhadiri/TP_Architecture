@@ -1,0 +1,25 @@
+@startuml
+class Employee {
+    int _empId
+    String _name
+    double _monthlySalary
+    String _manager
+    int _leavesTaken
+    int _yearsInOrg
+    int[] _leavesLeftPreviously
+
+    int getEmpId()
+    String getName()
+    int getLeavesLeft()
+    int getAnnualSalary()
+    int getTotalLeavesLeftPreviously()
+    String getManager()
+}
+class EmployeeFormatter {
+    Employee _employee
+
+    String toHtml()
+    String formatManager()
+}
+Employee -- EmployeeFormatter 
+@enduml

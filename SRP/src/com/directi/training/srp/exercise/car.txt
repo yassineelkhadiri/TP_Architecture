@@ -1,0 +1,46 @@
+@startuml
+class Car {
+    _id
+    _model
+    _brand
+
+    getId()
+    getModel()
+    getBrand()
+}
+class CarDb {
+    List<Car> _carsDb
+
+    List<Car> getAllFromDb()
+    Car getFromDb()
+}
+class CarDisplay {
+    CarDb _carDb
+
+    String getCarNames()
+}
+
+class CarRating{
+    CarDb _carDb
+
+    Car getBestCar()
+}
+
+class CarManager{
+    CarDisplay _carDisplay
+    CarRating _carRating
+
+    String getCarNames()
+    Car getBestCar()
+}
+
+CarDb "1" *-- "*" Car
+CarDisplay -- Car
+CarRating -- Car
+CarManager -- Car
+
+CarDisplay -- CarDb
+CarManager -- CarDisplay
+CarManager -- CarRating
+CarRating -- CarDb
+@enduml
