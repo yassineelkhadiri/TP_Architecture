@@ -1,38 +1,30 @@
 @startuml
-interface IDoor{
+interface Door{
+    void open()
     void lock()
     void unlock()
-    void open()
     void close()
-}
-interface ITime{
     void timeOutCallback()
-}
-interface ISensor{
     void proximityCallback()
+}
+class Timer{
+    void register()
 }
 class Sensor{
     void register()
     boolean _isPersonClose
 }
-
-class Timer{
-    void register()
-}
-
 class TimedDoor{
     boolean _locked
     boolean _opened
-    int TIME_OUT
+    int TIME_OUT 
 }
-
 class SensingDoor{
     boolean _locked
     boolean _opened
 }
-
-class SensingDoor implements IDoor, ISensor
-class TimedDoor implements IDoor,ITime
-Timer -- TimedDoor
-Sensor -- SensingDoor
-@endumlw
+class SensingDoor implements Door
+class TimedDoor implements Door
+TimedDoor -- Timer
+SensingDoor -- Sensor
+@endum
