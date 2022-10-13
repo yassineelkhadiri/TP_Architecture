@@ -3,10 +3,19 @@ interface IDuck{
     void Quack()
     void Swim()
 }
-class Duck
-class ElectornicDuck{
+class Duck{
+    
+}
+class ElectronicDuck{
     Boolean _on
 }
+class Pool{
+    void run()
+    void Quack()
+    void Swim()
+}
 class Duck implements IDuck
-class ElectornicDuck implements IDuck
+class ElectronicDuck extends Duck
+Pool -- Duck
+Pool -- ElectronicDuck
 @enduml
